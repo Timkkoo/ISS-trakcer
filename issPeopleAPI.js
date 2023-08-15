@@ -20,7 +20,6 @@ async function getPeopleData() {
   }
 }
 
-
 const peopleDetailsData = (peopleData) => {
   for (let i = 0; i <= peopleData.people.length; i++) {
     if (peopleData.people[i].craft == 'ISS') {
@@ -33,6 +32,5 @@ const peopleDetailsData = (peopleData) => {
   }
 };
 
-//jakiś sposób na przekazanie z fetch zmiennej globalnej
-//jak zrobić żeby był setinterval ale nie drukowało kilkanaście razy tego samego
+
 

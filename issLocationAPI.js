@@ -40,21 +40,21 @@ const checkVisibility = (issData) => {   //updating data on site
     issVisibilityParagraph.textContent = issVisibilityText + issVisibility;
     sunIcon.style.display = 'block';
     moonIcon.style.display = 'none';
-  } else if (issVisibility == 'eclipsed') {
-    issVisibilityParagraph.textContent = issVisibilityText + `Earth's shadow`;
-    moonIcon.style.display = 'block';
-    sunIconIcon.style.display = 'none';
-  }
+
+    return
+  } 
+  issVisibilityParagraph.textContent = issVisibilityText + `Earth's shadow`;
+  moonIcon.style.display = 'block';
+  sunIcon.style.display = 'none'; 
 };
 
 const updateData = (issData) => {
   latitude.textContent = issData.latitude.toFixed(5);
   longitude.textContent = issData.longitude.toFixed(5);
-  velocity.textContent = issData.velocity.toLocaleString('pl-PL') + ' km/h';
+  velocity.textContent = issData.velocity.toFixed(2).toLocaleString('pl-PL') + ' km/h';
   altitude.textContent = issData.altitude.toFixed(5) +' km';
 };
 
 setInterval(getData, 1000);  //refreshing the position every second
 
 
-//problem z przejściem z daylight na eclipsed - pokazują się dwie ikony
