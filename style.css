@@ -113,12 +113,8 @@ main {
     height: 53.5%;
 }
 
-.data-table {
-    justify-content: space-around;
-}
-
 h2 {
-    padding-top: 10px;
+    padding: 10px 5px;
 }
 
 .data-table td {
@@ -143,4 +139,9 @@ h2 {
 .sun-icon, .moon-icon {
     height: 26px;
     display: none;
+}
+
+.person {
+    padding: 5px;
+    font-size: 17px;
 }

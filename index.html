@@ -9,6 +9,8 @@
 
         <link rel="stylesheet" href="style.css">
         <script defer src="script.js"></script>
+        <script defer src="issLocationAPI.js"></script>
+        <script defer src="ISSpeopleAPI.js"></script>
     </head>
 
     <body>
@@ -26,20 +28,20 @@
                     <table class="data-table">
                         <tbody>
                             <tr>
-                                <td class="table-row-name">longitude</td>
-                                <td> -30.53535</td>
+                                <td>latitude</td>
+                                <td id="latitude"></td>
                             </tr>
                             <tr>
-                                <td>altitude</td>
-                                <td> -50.53535</td>
+                                <td>longitude</td>
+                                <td id="longitude"></td>
                             </tr>
                             <tr>
                                 <td>velocity</td>
-                                <td> 25477.53535</td>
+                                <td id="velocity"></td>
                             </tr>
                             <tr>
                                 <td>altitude</td>
-                                <td> 236.53535</td>
+                                <td id="altitude"></td>
                             </tr>
                             <tr>
                                 <td class="daylight-night" colspan="2">
@@ -54,7 +56,11 @@
                     </table>
                 </div>
                 <div class="left-col-element">
-                    <p></p>
+                    <table>
+                        <h2>People in ISS</h2>
+                        <tbody class = 'people-data'>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="right-col">
