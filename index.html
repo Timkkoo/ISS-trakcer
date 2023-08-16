@@ -1,84 +1,92 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Where is ISS now?</title>
-        <link rel="icon">
+    <title>Where is ISS now?</title>
+    <link rel="icon" />
 
-        <link rel="stylesheet" href="style.css">
-        <script defer src="script.js"></script>
-        <script defer src="issLocationAPI.js"></script>
-        <script defer src="ISSpeopleAPI.js"></script>
-    </head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-    <body>
-        <header class="header-class">
-            <div class="header-div">
-                <h1 class="header-title">Where is ISS now?</h1> 
-                <p class="time"></p>   
-            </div>
-        </header>
+    <script defer src="issLocationAPI.js" type="module"></script>
+    <script defer src="script.js"></script>
+    <script defer src="ISSpeopleAPI.js"></script>
+    <script defer src="map.js" type="module"></script>
 
-        <main>
-            <div class="left-col">
-                <div class="left-col-element">
-                    <h2>Basic data about ISS</h2>
-                    <table class="data-table">
-                        <tbody>
-                            <tr>
-                                <td>latitude</td>
-                                <td id="latitude"></td>
-                            </tr>
-                            <tr>
-                                <td>longitude</td>
-                                <td id="longitude"></td>
-                            </tr>
-                            <tr>
-                                <td>velocity</td>
-                                <td id="velocity"></td>
-                            </tr>
-                            <tr>
-                                <td>altitude</td>
-                                <td id="altitude"></td>
-                            </tr>
-                            <tr>
-                                <td class="daylight-night" colspan="2">
-                                    <div class="daylight-moonlight">
-                                    <p id="iss-vis"></p>
-                                    <img src="images/daylight.png" class='sun-icon'>
-                                    <img src="images/moon.png" class='moon-icon'>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="left-col-element">
-                    <table>
-                        <h2>People in ISS</h2>
-                        <tbody class = 'people-data'>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="right-col">
-                
-            </div>
-            
-        </main>
-        
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
 
-        <!-- <footer>
+  <body>
+    <header class="header-class">
+      <div class="header-div">
+        <h1 class="header-title">Where is ISS now?</h1>
+        <p class="time"></p>
+      </div>
+    </header>
+
+    <main>
+      <div class="left-col">
+        <div class="left-col-element">
+          <h2>Basic data about ISS</h2>
+          <table class="data-table">
+            <tbody>
+              <tr>
+                <td>latitude</td>
+                <td id="latitude"></td>
+              </tr>
+              <tr>
+                <td>longitude</td>
+                <td id="longitude"></td>
+              </tr>
+              <tr>
+                <td>velocity</td>
+                <td id="velocity"></td>
+              </tr>
+              <tr>
+                <td>altitude</td>
+                <td id="altitude"></td>
+              </tr>
+              <tr>
+                <td class="daylight-night" colspan="2">
+                  <div class="daylight-moonlight">
+                    <p id="iss-vis"></p>
+                    <img src="images/daylight.png" class="sun-icon" />
+                    <img src="images/moon.png" class="moon-icon" />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="left-col-element">
+          <table>
+            <h2>People in ISS</h2>
+            <tbody class="people-data"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="right-col">
+        <div id="issMap"></div>
+      </div>
+    </main>
+
+    <!-- <footer>
         <div>Licenses
             <div>Icon in head -<a href="https://www.flaticon.com/free-icons/space-station" title="space station icons">Space station icons created by Freepik - Flaticon</a></div>
             <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
         </div>
     </footer> -->
-    </body> 
-
-    
-
+  </body>
 </html>

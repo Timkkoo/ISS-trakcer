@@ -143,5 +143,9 @@ h2 {
 
 .person {
     padding: 5px;
-    font-size: 17px;
+    font-size: 18px;
+}
+
+#issMap {
+    height: 100%;
 }
