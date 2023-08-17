@@ -11,8 +11,6 @@ const altitude = document.querySelector('#altitude');
 
 const apiURL = 'https://api.wheretheiss.at/v1/satellites/25544'; //25544 stands for ISS
 
-let dataToSend = null;
-
 getData();
 
 async function getData() {
@@ -21,7 +19,6 @@ async function getData() {
     const response = await fetch(apiURL);
     if (response.ok) {
       const issData = await response.json();
-      dataToSend = null;
       sessionStorage.setItem('longitudeFromAPI', issData.longitude);
       sessionStorage.setItem('latitudeFromAPI', issData.latitude);
       checkVisibility(issData);
