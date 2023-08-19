@@ -28,7 +28,7 @@
   </head>
 
   <body>
-    <header class="header-class">
+    <header class="header-class mirror">
       <div class="header-div">
         <h1 class="header-title">Where is ISS now?</h1>
         <p class="time"></p>
@@ -36,8 +36,8 @@
     </header>
 
     <main>
-      <div class="left-col">
-        <div class="left-col-element">
+      <div class="left-col ">
+        <div class="left-col-element mirror">
           <h2>Basic data about ISS</h2>
           <table class="data-table">
             <tbody>
@@ -59,7 +59,7 @@
               </tr>
               <tr>
                 <td class="daylight-night" colspan="2">
-                  <div class="daylight-moonlight">
+                  <div class="daylight-moonlight round-border">
                     <p id="iss-vis"></p>
                     <img src="images/daylight.png" class="sun-icon" />
                     <img src="images/moon.png" class="moon-icon" />
@@ -69,15 +69,18 @@
             </tbody>
           </table>
         </div>
-        <div class="left-col-element">
+        <div class="left-col-element mirror">
           <table>
             <h2>People in ISS</h2>
             <tbody class="people-data"></tbody>
           </table>
         </div>
       </div>
-      <div class="right-col">
+      <div class="right-col mirror ">
         <div id="issMap"></div>
+        <div>
+          <button class="center-button round-border">Center map</button>
+        </div>
       </div>
     </main>
 

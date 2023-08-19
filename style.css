@@ -10,6 +10,8 @@
 :root {
     --text-color: rgb(255, 255, 255); 
     --mirror-bg: rgba(0, 0, 0, 0.1);
+    --center-button-border: rgba(85, 85, 85, 0.329);
+    --center-button-bg: rgba(59, 59, 59, 0.2);
 }
 
 html {
@@ -28,16 +30,26 @@ body {
     margin-top: 5rem;
 }
 
-.header-class {
-    width: 70%;
-    height: 10rem;
+.mirror {
     background: var(--mirror-bg);
     border-radius: 16px;
     box-shadow: 0 4px 30px var(--mirror-bg);
     backdrop-filter: blur(2.1px);
     -webkit-backdrop-filter: blur(2.1px);
     border: 1px solid  rgba(255, 255, 255, 0.04);
-    /* border: 1px solid red; */
+}
+
+.round-border {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.header-class {
+    width: 70%;
+    height: 10rem;
     color: var(--text-color);
     display: flex;
     align-items: center;
@@ -83,12 +95,7 @@ main {
     width: 68%;
     height: 100%;
     margin-left: 2%;
-    background: var(--mirror-bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px var(--mirror-bg);
-    backdrop-filter: blur(2.1px);
-    -webkit-backdrop-filter: blur(2.1px);
-    border: 1px solid  rgba(255, 255, 255, 0.04);
+    display: block;
 }
 
 .left-col-element {
@@ -97,12 +104,6 @@ main {
     width: 100%;
     height: 45%;
     margin-top: 2.5%;
-    background: var(--mirror-bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px var(--mirror-bg);
-    backdrop-filter: blur(2.1px);
-    -webkit-backdrop-filter: blur(2.1px);
-    border: 1px solid  rgba(255, 255, 255, 0.04);
 }
 
 .left-col div:first-child {
@@ -128,11 +129,6 @@ h2 {
     align-items: center;
     gap: 0.4rem;
     background: rgba(1, 1, 1,0.2);
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 }
 
 
@@ -146,6 +142,37 @@ h2 {
     font-size: 18px;
 }
 
+
 #issMap {
     height: 100%;
+    z-index: 0;
+}
+
+.center-button {
+    z-index: 10;
+    width: 6rem;
+    height: 1.8rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0.6px var(--center-button-border) solid;
+    outline: none;
+    background: var(--center-button-bg);
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -ms-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+}
+
+
+.center-button:hover {
+   cursor: pointer;
+   transform: scale(1.05);
+   -webkit-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -o-transform: scale(1.05);
+   --center-button-bg: rgba(59, 59, 59, 0.4);
+   
 }
