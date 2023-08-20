@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Where is ISS now?</title>
-    <link rel="icon"/>
+    <link rel="icon" />
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -18,6 +18,8 @@
     <script defer src="issLocationAPI.js"></script>
     <script defer src="script.js"></script>
     <script defer src="ISSpeopleAPI.js"></script>
+    <script defer src="https://unpkg.com/leaflet"></script>
+    <script defer src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
     <script defer src="map.js"></script>
 
     <script
@@ -34,9 +36,12 @@
         <p class="time"></p>
       </div>
     </header>
-
+      <div class="backdrop"></div>
+      <div class="information-window">
+        <button class="close-window-btn" type="button"><img src="images/delete.png"></button>
+      </div>
     <main>
-      <div class="left-col ">
+      <div class="left-col">
         <div class="left-col-element mirror">
           <h2>Basic data about ISS</h2>
           <table class="data-table">
@@ -76,10 +81,12 @@
           </table>
         </div>
       </div>
-      <div class="right-col mirror ">
+      <div class="right-col mirror">
         <div id="issMap"></div>
         <div>
-          <button class="center-button round-border">Center map</button>
+          <button class="center-button round-border" type="button">
+            Center map
+          </button>
         </div>
       </div>
     </main>
@@ -89,6 +96,7 @@
             <div>Icon in head -<a href="https://www.flaticon.com/free-icons/space-station" title="space station icons">Space station icons created by Freepik - Flaticon</a></div>
             <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Freepik - Flaticon</a>
         </div>
     </footer> -->
   </body>

@@ -1,3 +1,5 @@
+//this script is responsible for fetching API and updating data about people in ISS
+
 const peopleApiURL = 'http://api.open-notify.org/astros.json';
 
 const peopleTable = document.querySelector('.people-data');

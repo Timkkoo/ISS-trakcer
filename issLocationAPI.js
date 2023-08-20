@@ -1,3 +1,5 @@
+//this script is responsible for fetching data from API and updating data about ISS
+
 // variables for checkVisibility
 const issVisibilityParagraph = document.querySelector('#iss-vis');
 const sunIcon = document.querySelector('.sun-icon');

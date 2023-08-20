@@ -1,6 +1,10 @@
+//this script is responsible for icon, clock and information window
+
 //variables for change of icon color depending on the browser theme
 let iconElement = document.querySelector("link[rel='icon']");
 const timeParagraph = document.querySelector('.time');
+
+const closeButton = document.querySelector('.close-window-btn');
 
 const darkModeSet = (event) => {  //setting the color of the icon depending on the browser theme
   if (event.matches) {
@@ -24,6 +28,4 @@ setInterval(() => {
   let time = new Date().toLocaleTimeString();
   timeParagraph.textContent = time;
 }, 1);
-
-
 
