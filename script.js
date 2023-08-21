@@ -4,7 +4,26 @@
 let iconElement = document.querySelector("link[rel='icon']");
 const timeParagraph = document.querySelector('.time');
 
-const closeButton = document.querySelector('.close-window-btn');
+const closeInfoButton = document.querySelector('.close-window-btn');
+const issInfoButton = document.querySelector('#open-info-btn');
+const backdrop = document.querySelector('#backdrop');
+const informationWindow = document.querySelector('.information-window')
+
+
+const toggleBackdrop = () => {
+  backdrop.classList.toggle('visible');
+}
+
+const showInformation = () => {
+  informationWindow.classList.add('visible');
+  toggleBackdrop();
+}
+
+const closeInformation = () => {
+  informationWindow.classList.remove('visible');
+  toggleBackdrop();
+}
+
 
 const darkModeSet = (event) => {  //setting the color of the icon depending on the browser theme
   if (event.matches) {
@@ -28,4 +47,13 @@ setInterval(() => {
   let time = new Date().toLocaleTimeString();
   timeParagraph.textContent = time;
 }, 1);
+
+
+const consoleLog = () => {
+  console.log('button is working');
+}
+
+issInfoButton.addEventListener('click', showInformation);
+backdrop.addEventListener('click', closeInformation)
+closeInfoButton.addEventListener('click', closeInformation);
 

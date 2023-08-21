@@ -19,27 +19,69 @@
     <script defer src="script.js"></script>
     <script defer src="ISSpeopleAPI.js"></script>
     <script defer src="https://unpkg.com/leaflet"></script>
-    <script defer src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
-    <script defer src="map.js"></script>
-
     <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
+      defer
+      src="https://unpkg.com/@joergdietrich/leaflet.terminator"
     ></script>
+    <script defer src="map.js"></script>
   </head>
 
   <body>
     <header class="header-class mirror">
       <div class="header-div">
-        <h1 class="header-title">Where is ISS now?</h1>
+        <h1 class="header-title">Where is <span id ='open-info-btn'>ISS</span> now?</h1>
         <p class="time"></p>
       </div>
     </header>
-      <div class="backdrop"></div>
-      <div class="information-window">
-        <button class="close-window-btn" type="button"><img src="images/delete.png"></button>
+    <div id="backdrop"></div>
+    <div class="information-window">
+      <button class="close-window-btn" type="button">
+        <img src="images/x-mark-16.png"/>
+      </button>
+      <div class="information-text">
+        <p class="info-paragraph">
+          The <b>International Space Station</b> (ISS) is the largest modular
+          space station in low Earth orbit. The project involves five space
+          agencies: NASA (USA), Roscosmos (Russia), AXA (Japan), ESA (Europe)
+          and CSA (Canada).
+        </p>
+        <p class="info-paragraph">
+          The station serves as a microgravity and space environment research
+          laboratory in which scientific research is conducted. The ISS is
+          suited for testing the spacecraft systems and equipment required for
+          possible future long-duration missions to Moon and Mars.
+        </p>
+        <p class="info-paragraph">
+          The station is divided into two sections: the Russian Orbital Segment
+          (ROS) is operated by Russia, while the United States Orbital Segment
+          (USOS) is run by the United States as well as other countries.
+        </p>
+        <p class="info-paragraph">
+          It is the largest artificial object in the Solar System and the
+          largest satellite in low Earth orbit, regularly visible to the naked
+          eye from Earth's surface. It maintains an orbit with an average
+          altitude of 400 kilometres (250 mi) by means of reboost manoeuvres
+          using the engines of the Zvezda Service Module or visiting spacecraft.
+          The ISS circles the Earth in roughly 93 minutes, completing 15.5
+          orbits per day.
+        </p>
+        <p class="info-paragraph">
+          First component of the station was launched in 1998 and the first
+          residents arrived on 2 November 2000 after being launched from
+          Baikonur Cosmodrome on October 31 2000. Since then, station has been
+          continuously occupied.
+        </p>
+        <p class="info-paragraph">
+          Read more about station
+          <a
+            href="https://en.wikipedia.org/wiki/International_Space_Station"
+            id="iss-wikipedia-hyperlink"
+            target="_blank"
+            >here</a
+          >!
+        </p>
       </div>
+    </div>
     <main>
       <div class="left-col">
         <div class="left-col-element mirror">
@@ -96,7 +138,6 @@
             <div>Icon in head -<a href="https://www.flaticon.com/free-icons/space-station" title="space station icons">Space station icons created by Freepik - Flaticon</a></div>
             <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Freepik - Flaticon</a>
         </div>
     </footer> -->
   </body>
