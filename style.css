@@ -13,6 +13,9 @@
     --mirror-bg: rgba(0, 0, 0, 0.1);
     --center-button-border: rgba(85, 85, 85, 0.329);
     --center-button-bg: rgba(59, 59, 59, 0.2);
+    --center-button-bg: rgba(59, 59, 59, 0.2);
+    --center-button-bg-hover: rgba(59, 59, 59, 0.5);
+    --br: 5px;
 }
 
 html {
@@ -28,7 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 4.5rem;
 }
 
 .mirror {
@@ -41,11 +44,11 @@ body {
 }
 
 .round-border {
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border-radius: var(--br);
+    -webkit-border-radius: var(--br);
+    -moz-border-radius: var(--br);
+    -ms-border-radius: var(--br);
+    -o-border-radius: var(--br);
 }
 
 .header-class {
@@ -106,6 +109,30 @@ main {
     width: 100%;
     height: 30vh;
     margin-top: 2.5%;
+    overflow-y: auto;
+}
+
+.left-col-element::-webkit-scrollbar {
+    width: 10px;
+}
+
+.left-col-element::-webkit-scrollbar-thumb {
+    border-radius: var(--br);
+    -webkit-border-radius: var(--br);
+    -moz-border-radius: var(--br);
+    -ms-border-radius: var(--br);
+    -o-border-radius: var(--br);
+    background: var(--center-button-bg);
+
+}
+
+.left-col-element::-webkit-scrollbar-thumb:hover {
+    background-color: var(--center-button-bg-hover);
+}
+
+.left-col-element::-webkit-scrollbar-track {
+    background-color: none;
+    margin-block: .7rem;
 }
 
 .left-col div:first-child {
@@ -160,11 +187,11 @@ h2 {
     border: 0.6px var(--center-button-border) solid;
     outline: none;
     background: var(--center-button-bg);
-    transition: .4s ease-in-out;
-    -webkit-transition: .4s ease-in-out;
-    -moz-transition: .4s ease-in-out;
-    -ms-transition: .4s ease-in-out;
-    -o-transition: .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
 }
 
 .center-button:hover {
@@ -174,7 +201,7 @@ h2 {
    -moz-transform: scale(1.05);
    -ms-transform: scale(1.05);
    -o-transform: scale(1.05);
-   --center-button-bg: rgba(59, 59, 59, 0.4);
+   background-color: var(--center-button-bg-hover);
 }
 
 .information-window {
@@ -188,17 +215,22 @@ h2 {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    animation: fade-slide-in 0.3s ease-out reverse;
-    -webkit-animation: fade-slide-in 0.3s ease-out reverse;
+}
+
+.information-window.out {
+    animation: fade-slide-out 0.3s ease-out normal;
+    -webkit-animation: fade-slide-out 0.3s ease-out normal;
+}
+
+.information-window.in {
+    animation: fade-slide-in 0.3s ease-out normal;
+    -webkit-animation: fade-slide-in 0.3s ease-out normal;
 }
 
 .information-window.visible {
     display: block;
-    animation: fade-slide-in 0.3s ease-out forwards;
-    -webkit-animation: fade-slide-in 0.3s ease-out forwards;
 }
   
-
 .information-window::before {
     content: '';
     background: url(images/iss.jpg) no-repeat center center fixed;
@@ -231,6 +263,7 @@ h2 {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
+    cursor: pointer;
 }
 
 .information-text {
@@ -285,11 +318,39 @@ h2 {
 @keyframes fade-slide-in {
     from {
       transform: translateY(-5rem);
-    }
+      -webkit-transform: translateY(-5rem);
+      -moz-transform: translateY(-5rem);
+      -ms-transform: translateY(-5rem);
+      -o-transform: translateY(-5rem);
+}
     to {
       transform: translateY(0);
-    }
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
 }
+}
+
+@keyframes fade-slide-out {
+    from {
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+}
+    to {
+      transform: translateY(-5rem);
+      -webkit-transform: translateY(-5rem);
+      -moz-transform: translateY(-5rem);
+      -ms-transform: translateY(-5rem);
+      -o-transform: translateY(-5rem);
+}
+}
+
+
+  
   
  
 

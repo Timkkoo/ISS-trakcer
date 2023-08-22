@@ -14,16 +14,25 @@ const toggleBackdrop = () => {
   backdrop.classList.toggle('visible');
 }
 
+const toggleVisibility = () => {
+  informationWindow.classList.toggle('visible')
+}
+
 const showInformation = () => {
-  informationWindow.classList.add('visible');
+  informationWindow.classList.remove('out');
+  informationWindow.classList.add('in');
+  toggleVisibility();
   toggleBackdrop();
 }
 
 const closeInformation = () => {
-  informationWindow.classList.remove('visible');
-  toggleBackdrop();
+  informationWindow.classList.remove('in');
+  informationWindow.classList.add('out');
+  setTimeout(() => {
+    toggleVisibility()
+    toggleBackdrop()},250);
+  
 }
-
 
 const darkModeSet = (event) => {  //setting the color of the icon depending on the browser theme
   if (event.matches) {
