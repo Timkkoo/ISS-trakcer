@@ -9,6 +9,8 @@ const issInfoButton = document.querySelector('#open-info-btn');
 const backdrop = document.querySelector('#backdrop');
 const informationWindow = document.querySelector('.information-window')
 
+const animationTime = 200;
+
 
 const toggleBackdrop = () => {
   backdrop.classList.toggle('visible');
@@ -30,7 +32,7 @@ const closeInformation = () => {
   informationWindow.classList.add('out');
   setTimeout(() => {
     toggleVisibility()
-    toggleBackdrop()},250);
+    toggleBackdrop()},animationTime);
   
 }
 
