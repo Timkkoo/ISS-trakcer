@@ -110,10 +110,12 @@ main {
     height: 30vh;
     margin-top: 2.5%;
     overflow-y: auto;
+    overflow-x: auto;
 }
 
 .left-col-element::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
 .left-col-element::-webkit-scrollbar-thumb {
@@ -130,16 +132,21 @@ main {
     background-color: var(--center-button-bg-hover);
 }
 
+.left-col-element::-webkit-scrollbar-corner{
+    background-color: none;
+}
+
 .left-col-element::-webkit-scrollbar-track {
     background-color: none;
     margin-block: .7rem;
+
 }
 
 .left-col div:first-child {
     margin-top: 0;
 }
 
-.left-col div:last-child{
+.left-col div:last-child {
     height: 53.5%;
 }
 
@@ -170,7 +177,6 @@ h2 {
     padding: 5px;
     font-size: 18px;
 }
-
 
 #issMap {
     height: 100%;
@@ -350,7 +356,88 @@ h2 {
 }
 
 
-  
+@media only screen and (max-width: 1120px) {
+    main {
+        display: block;
+    }
+
+    .header-class {
+        height: auto;
+    }
+
+    .header-div {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .left-col {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        border: 1px solid red;
+        gap: 0.5rem;
+        height: 17rem;
+        margin: 0;
+    }
+
+    .left-col-element {
+        width: 50%;
+        margin: 0;
+        height: 100%;
+    }
+
+    .right-col {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        height: 80%;
+    }
+
+    .left-col div:last-child {
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 696px) {
+
+    .header-div {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .data-table > tbody > tr > td {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        overflow-x: none;
+    }
+
+    .data-table > tbody > tr {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+    }
+
+    .right-col {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        height: 60%;
+    }
+
+    .data-table td {
+        padding: 8px;
+        line-height: 14px;
+    }
+}
   
  
 
